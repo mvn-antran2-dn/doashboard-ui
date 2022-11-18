@@ -1,0 +1,29 @@
+.page-footer {
+  img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 40px;
+    height: 40px
+  }
+
+  .footer-paper {
+  }
+
+  .footer-menu {
+    width: 100%;
+    @include pxRem(height, 61.5);
+    @include pxRem(padding, 1 16);
+    @include pxRem(margin-left, 258);
+    button , .text-ft-menu{
+      color: rgb(158, 158, 158);
+      @include pxRem(font-size, 14);
+      font-weight: 400;
+      line-height: 1.5;
+      text-transform: capitalize;
+    }
+
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+}
