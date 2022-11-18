@@ -10,6 +10,7 @@
     background-color: rgb(35, 48, 68);
     color: map-get($map: $colors, $key: color-background);
     @include pxRem(padding-top, 10);
+    height: 102.8%;
 
     .sidebar-list-title {
       background-color: rgb(35, 48, 68);

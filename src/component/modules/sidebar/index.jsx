@@ -20,7 +20,6 @@ import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutl
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import { Box, Grid, Typography } from '@mui/material';
 
 function Sidebar() {
   const [open, setOpen] = React.useState(true);
@@ -157,13 +156,6 @@ function Sidebar() {
           <ListItemText primary="Maps" />
         </ListItemButton>
       </List>
-      <Grid sx={{ display: "flex", position: 'fixed' }}>
-          <img src="https://mira.bootlab.io/static/img/avatars/avatar-1.jpg" alt="avatar" />
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography>Lucy Lavender</Typography>
-            <Typography>UX Designer</Typography>
-          </Box>
-        </Grid>
     </>
   );
 }

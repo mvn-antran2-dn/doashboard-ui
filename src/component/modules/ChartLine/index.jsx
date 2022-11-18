@@ -64,7 +64,7 @@ const LineChart = () => {
       <Card elevation={0}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <CardHeader className="title-chart-line" title='Total revenue' variant='h6' />
-          <MoreVertOutlinedIcon sx={{ marginLeft : "16px"}}/>
+          <MoreVertOutlinedIcon sx={{ marginRight : "16px"}}/>
         </Box>
         <Grid className="line-chart">
           <Line className='line-chart-canvas' options={options} data={state} />
