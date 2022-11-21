@@ -6,11 +6,13 @@ import TextareaAutosize from '@mui/material/TextField';
 import Chip from '@mui/material/Chip';
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import LanguageIcon from "@mui/icons-material/Language";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import { useTranslation } from "react-i18next";
+import i18n from "i18next";
+import Avatar from '@mui/material/Avatar';
 
 function HeaderCP() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -30,9 +32,9 @@ function HeaderCP() {
   const handleClick1 = (event) => {
     setAnchorEl1(event.currentTarget);
   };
-  const handleClose1 = () => {
-    setAnchorEl1(null);
-  };
+  // const handleClose1 = () => {
+  //   setAnchorEl1(null);
+  // };
   const handleClick2 = (event) => {
     setAnchorEl2(event.currentTarget);
   };
@@ -45,6 +47,12 @@ function HeaderCP() {
   const handleClose3 = () => {
     setAnchorEl3(null);
   };
+  const { t } = useTranslation("translation");
+  const changeLanguage = (e) => {
+    const languageValue = e.target.id
+    i18n.changeLanguage(languageValue);
+    setAnchorEl1(null);
+  }
   return (
     <>
       <Grid item xs={9.85} className="page-header-menu">
@@ -54,7 +62,7 @@ function HeaderCP() {
               <SearchIcon></SearchIcon>
               <TextareaAutosize
                 aria-label="empty textarea"
-                placeholder="Search topics..."
+                placeholder={t("title")}
                 style={{ width: 200, height: 20 }}
                 className="search-input"
               />
@@ -191,7 +199,9 @@ function HeaderCP() {
               </Menu>
               <Box className="tooltip-btn-menu-social">
                 <Tooltip title="Language">
-                  <LanguageIcon
+                  <Avatar
+                    alt={t("alt")}
+                    src={t("img")}
                     id="basic-button-language"
                     aria-controls={open ? 'basic-menu-language' : undefined}
                     aria-haspopup="true"
@@ -203,16 +213,16 @@ function HeaderCP() {
                 id="basic-menu-language"
                 anchorEl={anchorEl1}
                 open={open1}
-                onClose={handleClose1}
+                onClose={changeLanguage}
                 elevation={0}
                 MenuListProps={{
                   'aria-labelledby': 'basic-button',
                 }}
               >
-                <MenuItem className="menu-item-today" onClick={handleClose1}>English</MenuItem>
-                <MenuItem className="menu-item-today" onClick={handleClose1}>French</MenuItem>
-                <MenuItem className="menu-item-today" onClick={handleClose1}>German</MenuItem>
-                <MenuItem className="menu-item-today" onClick={handleClose1}>Dutch</MenuItem>
+                <MenuItem className="menu-item-today" id="eng" onClick={changeLanguage}>English</MenuItem>
+                <MenuItem className="menu-item-today" id="french" onClick={changeLanguage}>French</MenuItem>
+                <MenuItem className="menu-item-today" id="german" onClick={changeLanguage}>German</MenuItem>
+                <MenuItem className="menu-item-today" id="dutch" onClick={changeLanguage}>Dutch</MenuItem>
               </Menu>
               <Box className="tooltip-btn-menu-social">
                 <Tooltip title="Account">

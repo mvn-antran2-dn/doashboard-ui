@@ -108,6 +108,11 @@
       svg {
         color: map-get($map: $colors, $key: bs-gray-500);
       }
+      img{
+        @include pxRem(width, 22);
+        @include pxRem(height, 22);
+        border-radius: 50%;
+      }
 
       .tooltip-btn-menu-social {
         border-radius: 50%;

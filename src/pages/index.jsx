@@ -9,6 +9,7 @@ import LineChart from '../component/modules/ChartLine';
 import DoughnutChart from '../component/modules/ChartDoughnut';
 import BarChart from '../component/modules/BarChart';
 import BarTable from '../component/modules/TableBar';
+import { useTranslation } from "react-i18next";
 
 function Main() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -19,6 +20,7 @@ function Main() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const { t } = useTranslation("translation");
   return (
     <>
       <Box>
@@ -26,7 +28,7 @@ function Main() {
           <Grid item xs={12} className="page-main-menu-header">
             <Grid>
               <Typography variant="h5" component="h3" className='menu-header-title'> Default Dashboard</Typography>
-              <Typography variant="subtitle1" component="h6" className='menu-header-subtitle'> Welcome back, Lucy! We've missed you. 👋</Typography>
+              <Typography variant="subtitle1" component="h6" className='menu-header-subtitle'> {t("title-main")}👋</Typography>
             </Grid>
             <Grid className="btn-social">
               <Button className='menu-header-btn-social' variant="text"><LoopOutlinedIcon /></Button>
