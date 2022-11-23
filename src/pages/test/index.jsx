@@ -2,7 +2,7 @@ import { Avatar, Box, Button, Divider, Grid, TextField, Typography } from '@mui/
 import React, { useState } from 'react';
 import SendIcon from '@mui/icons-material/Send';
 
-function ChatBox() {
+function Test() {
   const datas = [
     {
       subtitle1: "Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.",
@@ -28,7 +28,7 @@ function ChatBox() {
     setSubtitle(e.target.value)
   } 
   const handleSent = () => {
-    setArtists([...artists, { subtitle2: subtitle, subtitle1: '', time2: 2 }]); 
+    setArtists([...artists, { subtitle2: subtitle, subtitle1: '', time2:  Math.floor(Math.random() * 3)}]); 
     setSubtitle('');
   }
   return (
@@ -65,11 +65,10 @@ function ChatBox() {
       <Divider variant="middle" className="content-right-divider" />
       <Box className="content-right-sent flex align-items-center">
         <TextField value={subtitle}
-          onChange={handleOnchange} onKeyPress={handleSent} id="outlined-basic" label="Type your message" variant="outlined" className="content-right-input" />
+          onChange={handleOnchange} id="outlined-basic" label="Type your message" variant="outlined" className="content-right-input" />
         <Button onClick={handleSent} className="content-right-btn-sent" variant="contained" endIcon={<SendIcon />}></Button>
       </Box>
     </Grid>
-  );
+  )
 }
-
-export default ChatBox
+export default Test
