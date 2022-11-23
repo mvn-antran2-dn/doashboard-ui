@@ -7,13 +7,14 @@
     }
 
     .header-logo {
-      @include pxRem(margin-left, 70);
+      @include pxRem(margin-left, 71);
       @include pxRem(height, 64);
       background-color: rgb(35, 48, 68);
 
       p {
         @include pxRem(font-size, 17);
         color: map-get($map: $colors, $key: color-background);
+        @include pxRem(letter-spacing, 0.3);
       }
 
       p+div {
@@ -26,6 +27,11 @@
       svg {
         color: rgb(71, 130, 218);
         fill: rgb(71, 130, 218);
+      }
+      .header-chip-pro span{
+       @include pxRem(padding, 6);
+       line-height: 1;
+       @include pxRem(margin-left, 1);
       }
     }
   }

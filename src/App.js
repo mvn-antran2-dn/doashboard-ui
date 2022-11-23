@@ -18,6 +18,7 @@ import Sidebar from './component/modules/sidebar';
 import Main from './pages';
 import FooterCP from "./component/layout/footer";
 import HeaderCP from "./component/layout/header";
+import { Route, Routes } from "react-router-dom";
 
 const drawerWidth = 259;
 function App(props) {
@@ -36,7 +37,7 @@ function App(props) {
             <Box className='header-logo' sx={{ display: "flex", alignItems: "center" }}>
               <Logo />
               <Typography marginLeft={1.5}>Mira</Typography>
-              <Chip label="PRO" color="success" size="small" />
+              <Chip label="PRO" color="success" size="small" className="header-chip-pro"/>
             </Box>
           </Paper>
         </Grid></ Toolbar>
@@ -112,7 +113,9 @@ function App(props) {
           sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
           className="page-main"
         >
-          <Main />
+           <Routes>
+              <Route path="*" element={<Main />}></Route>
+            </Routes>
         </Box>
       </Box>
       <FooterCP />

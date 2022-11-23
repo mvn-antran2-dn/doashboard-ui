@@ -19,19 +19,36 @@
       font-weight: map-get($map: $font-weight, $key: font-regular);
       line-height: 1.57;
       font-size: 0.696429rem;
+      @include pxRem(padding, 15 28 4);
+      color: rgb(238, 238, 238);
+      opacity: 0.4;
+      @include pxRem(letter-spacing, -0.1);
     }
 
     svg {
-      color: map-get($map: $colors, $key: bs-gray-500);
+      color: rgb(238, 238, 238);
+      opacity: 0.5;
     }
 
-    .sidebar-list-name span {
-      @include pxRem(font-size, 13);
-      color: rgb(238, 238, 238);
-    }
+    .sidebar-list-name{
+      @include pxRem(padding, 9 27 12 31);
+      span {
+        @include pxRem(font-size, 13.5);
+        color: rgb(238, 238, 238);
+      }
+    } 
+    .sidebar-list-collapse{
+      padding: 0;
+      span {
+        @include pxRem(font-size, 13.5);
+        color: rgb(238, 238, 238);
+        opacity: 0.6;
+      }
+    } 
 
     .sidebar-item-name {
-      @include pxRem(margin-left, 45);
+      @include pxRem(padding-left, 40);
+      margin: 0 0;
     }
   }
 
@@ -301,8 +318,238 @@
         font-size: 90%;
         color: rgb(255, 255, 255);
       }
+    }
+  }
 
+  //end page doashboard default
+  .page-chat-header {
+    @include pxRem(margin-top, 15);
 
+    &-title {
+      @include pxRem(letter-spacing, 0.5);
+      margin: 0 0 0.32em;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.25;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    &-breadcrumb {
+      @include pxRem(font-size, 13);
+
+      :nth-child(2n) {
+        @include pxRem(margin, 0 7.5);
+      }
+
+      p {
+        @include pxRem(font-size, 13);
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-weight: 400;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      li:not(:last-child) {
+        p {
+          color: rgb(55, 111, 208);
+        }
+
+        p:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .chat-divider {
+    @include pxRem(margin, 25 24 25 0 !important);
+  }
+
+  .page-chat-content {
+    width: 100%;
+    height: 65vh;
+
+    input {
+      border: unset;
+      box-shadow: none;
+      height: 1.4375em;
+      @include pxRem(padding, 14);
+    }
+
+    label {
+      @include pxRem(font-size, 13.5);
+      @include pxRem(letter-spacing, 0.2);
+    }
+  }
+
+  .content-left {
+    &-input {
+      border-right: 1px solid rgba(0, 0, 0, 0.12);
+      height: 65vh;
+    }
+
+    &-input-text {
+      width: 100%;
+    }
+
+    &-divider {
+      margin: 0;
+    }
+
+    &-mess {
+      @include pxRem(padding, 8 16);
+
+      span {
+        background-color: rgb(76, 175, 80);
+        border: 1.5px solid rgb(255, 255, 255);
+        @include pxRem(height, 12);
+        @include pxRem(width, 12);
+        border-radius: 50%;
+        position: absolute;
+        top: 73%;
+        left: 70%;
+      }
+
+      &:last-child {
+        h3 {
+          @include pxRem(margin, -1 0 1);
+        }
+
+        span {
+          display: none;
+        }
+      }
+    }
+
+    &-user {
+      @include pxRem(padding, 6 0);
+    }
+
+    &-title {
+      @include pxRem(font-size, 13);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    &-subtitle {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      font-size: 0.8125rem;
+      line-height: 1.43;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .content-right {
+    &-chat {
+      overflow-y: scroll;
+      height: calc(65vh - 94px);
+      @include pxRem(padding-top, 29);
+    }
+
+    &-divider {
+      @include pxRem(margin, -2 0);
+    }
+
+    &-sent {
+      @include pxRem(min-height, 94);
+      @include pxRem(padding, 20 20 19);
+      width: 100%;
+    }
+
+    &-input {
+      flex-grow: 1;
+
+      input {
+        @include pxRem(padding, 13 14 15);
+      }
+    }
+
+    &-btn-sent {
+      @include pxRem(width, 48);
+      @include pxRem(height, 48);
+      border-radius: 50%;
+      justify-content: flex-end;
+      @include pxRem(min-width, 36);
+      @include pxRem(margin, 0 0 3 8);
+    }
+
+    &-img {
+      @include pxRem(width, 34);
+      @include pxRem(height, 34);
+      @include pxRem(margin, 0 8 8 0);
+    }
+
+    &-title {
+      @include pxRem(font-size, 13);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.5;
+      font-weight: 600;
+      @include pxRem(letter-spacing, -0.05);
+    }
+
+    &-subtitle {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      font-size: 0.8125rem;
+      line-height: 1.43;
+      @include pxRem(letter-spacing, 0.08);
+    }
+
+    &-time {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      font-size: 0.8125rem;
+      line-height: 1.43;
+      text-align: right;
+      opacity: 0.8;
+    }
+
+    &-mess:first-child {
+      .content-right-messenger {
+        @include pxRem(margin, 0 30 30);
+      }
+
+      .first {
+        .content-right-subtitle {
+          @include pxRem(margin, -1 0 1);
+        }
+      }
+    }
+  }
+
+  .content-right-messenger {
+    display: inline-block;
+    @include pxRem(margin, 1 30 30);
+
+    &.first {
+      .content-right-user {
+        background: rgba(0, 0, 0, 0.04);
+        border-radius: 3px;
+        padding: 8px;
+        margin-bottom: 4px;
+      }
+
+      .content-right-img {
+        @include pxRem(margin, 0 8 10 0);
+      }
+    }
+
+    &.second {
+      justify-content: right;
+      flex-direction: column;
+      display: grid;
+      text-align: right;
+
+      .content-right-user {
+        background: rgb(71, 130, 218);
+        color: rgb(255, 255, 255);
+        border-radius: 3px;
+        padding: 8px;
+        margin-bottom: 4px;
+      }
     }
   }
 }

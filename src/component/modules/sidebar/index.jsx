@@ -20,11 +20,16 @@ import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutl
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import { NavLink } from 'react-router-dom';
 
 function Sidebar() {
-  const [open, setOpen] = React.useState(true);
-  const handleClick = () => {
-    setOpen(!open);
+  const [open1, setOpen1] = React.useState(true);
+  const [open2, setOpen2] = React.useState(true);
+  const handleClick1 = () => {
+    setOpen1(!open1);
+  };
+  const handleClick2 = () => {
+    setOpen2(!open2);
   };
   return (
     <>
@@ -38,72 +43,112 @@ function Sidebar() {
           </ListSubheader>
         }
       >
-        <ListItemButton className='sidebar-list-name' onClick={handleClick}>
-          <ListItemIcon>
+        <ListItemButton className='sidebar-list-name' onClick={handleClick1}>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <TuneIcon />
           </ListItemIcon>
-          <ListItemText primary="Doashboard" />
-          {open ? <ExpandLess /> : <ExpandMore />}
+          <ListItemText primary="Dashboard" />
+          {open1 ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
-        <Collapse className='sidebar-list-name' in={open} timeout="auto" unmountOnExit>
+        <Collapse className='sidebar-list-collapse' in={open1} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText className='sidebar-item-name'  primary="Default" />
-            </ListItemButton>
+            <NavLink to="/">
+              <ListItemButton sx={{ pl: 4, padding: "2px 16px 14px 32px " }}>
+                <ListItemText className='sidebar-item-name' primary="Default" />
+              </ListItemButton>
+            </NavLink>
           </List>
         </Collapse>
-        <Collapse className='sidebar-list-name' in={open} timeout="auto" unmountOnExit>
+        <Collapse className='sidebar-list-collapse' in={open1} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
+            <ListItemButton sx={{ pl: 4, padding: "2px 16px 14px 32px " }}>
               <ListItemText className='sidebar-item-name' primary="Analytics" />
             </ListItemButton>
           </List>
         </Collapse>
-        <Collapse className='sidebar-list-name' in={open} timeout="auto" unmountOnExit>
+        <Collapse className='sidebar-list-collapse' in={open1} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemText className='sidebar-item-name' primary="Saas" />
+            <ListItemButton sx={{ pl: 4, padding: "2px 16px 6px 32px " }}>
+              <ListItemText className='sidebar-item-name' primary="SaaS" />
+            </ListItemButton>
+          </List>
+        </Collapse>
+        <ListItemButton className='sidebar-list-name' onClick={handleClick2}>
+          <ListItemIcon sx={{minWidth: "38px"}}>
+            <WebIcon />
+          </ListItemIcon>
+          <ListItemText primary="Pages" />
+          {open2 ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
+        <Collapse className='sidebar-list-collapse' in={open2} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItemButton sx={{ pl: 4, padding: "2px 16px 14px 32px " }}>
+              <ListItemText className='sidebar-item-name' primary="Profile" />
+            </ListItemButton>
+          </List>
+        </Collapse>
+        <Collapse className='sidebar-list-collapse' in={open2} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItemButton sx={{ pl: 4, padding: "2px 16px 14px 32px " }}>
+              <ListItemText className='sidebar-item-name' primary="Settings" />
+            </ListItemButton>
+          </List>
+        </Collapse>
+        <Collapse className='sidebar-list-collapse' in={open2} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItemButton sx={{ pl: 4, padding: "2px 16px 14px 32px " }}>
+              <ListItemText className='sidebar-item-name' primary="Pricing" />
+            </ListItemButton>
+          </List>
+        </Collapse>
+        <Collapse className='sidebar-list-collapse' in={open2} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <NavLink to="/chat">
+              <ListItemButton sx={{ pl: 4, padding: "2px 16px 14px 32px " }}>
+                <ListItemText className='sidebar-item-name' primary="Chat" />
+              </ListItemButton>
+            </NavLink>
+          </List>
+        </Collapse>
+        <Collapse className='sidebar-list-collapse' in={open2} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItemButton sx={{ pl: 4, padding: "2px 16px 6px 32px " }}>
+              <ListItemText className='sidebar-item-name' primary="Blank Page" />
             </ListItemButton>
           </List>
         </Collapse>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
-            <WebIcon />
-          </ListItemIcon>
-          <ListItemText primary="Pages" />
-        </ListItemButton>
-        <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <LuggageIcon />
           </ListItemIcon>
           <ListItemText primary="Projects" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <ShoppingCartOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Orders" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <PaymentOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Invoies" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <AssignmentTurnedInOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Task" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <CalendarTodayOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Calender" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <GroupOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Auth" />
@@ -120,37 +165,37 @@ function Sidebar() {
         }
       >
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <WidgetsOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Components" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <PieChartOutlineOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Chart" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <AssignmentTurnedInOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Forms" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <FormatListBulletedOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Tables" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <FavoriteBorderOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Icons" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon>
+          <ListItemIcon sx={{minWidth: "38px"}}>
             <MapOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Maps" />
