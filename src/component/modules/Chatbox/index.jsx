@@ -1,6 +1,6 @@
+import SendIcon from '@mui/icons-material/Send';
 import { Avatar, Box, Button, Divider, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import SendIcon from '@mui/icons-material/Send';
 
 function ChatBox() {
   const datas = [
@@ -26,16 +26,28 @@ function ChatBox() {
   const [artists, setArtists] = useState([...datas]);
   const handleOnchange = (e) => {
     setSubtitle(e.target.value)
-  } 
-  const handleSent = () => {
-    setArtists([...artists, { subtitle2: subtitle, subtitle1: '', time2: 2 }]); 
-    setSubtitle('');
   }
+  const handleSent = (e) => {
+    if (e.charCode === 13) {
+      setArtists([...artists, { subtitle2: subtitle, subtitle1: '', time2: 2 }]);
+      setSubtitle('');
+      const element = document.getElementById("sent");
+      setTimeout(()=> {element.scrollTop = element.scrollHeight}, 100)
+    }
+  }
+  const handleSentMess = (e) => {
+      setArtists([...artists, { subtitle2: subtitle, subtitle1: '', time2: 2 }]);
+      setSubtitle('');
+      const element = document.getElementById("sent");
+      setTimeout(()=> {element.scrollTop = element.scrollHeight}, 100)
+  }
+
+
   return (
     <Grid item xs={12} className="content-right">
-      <Box className="content-right-chat">
+      <Box className="content-right-chat" id="sent" sx={{ scrollBehavior: "smooth" }}>
         {artists.map((artist) =>
-          <Box key={Math.random()} className="content-right-mess ">
+          <Box key={Math.random()} className="content-right-mess" >
             {artist.subtitle1 === "" ? "" :
               <Box className="content-right-messenger first ">
                 <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -64,9 +76,8 @@ function ChatBox() {
       </Box>
       <Divider variant="middle" className="content-right-divider" />
       <Box className="content-right-sent flex align-items-center">
-        <TextField value={subtitle}
-          onChange={handleOnchange} onKeyPress={handleSent} id="outlined-basic" label="Type your message" variant="outlined" className="content-right-input" />
-        <Button onClick={handleSent} className="content-right-btn-sent" variant="contained" endIcon={<SendIcon />}></Button>
+        <TextField value={subtitle} onChange={handleOnchange} onKeyPress={handleSent} id="outlined-basic" label="Type your message" variant="outlined" className="content-right-input" />
+        <Button onClick={handleSentMess} className="content-right-btn-sent" variant="contained" endIcon={<SendIcon />}></Button>
       </Box>
     </Grid>
   );
