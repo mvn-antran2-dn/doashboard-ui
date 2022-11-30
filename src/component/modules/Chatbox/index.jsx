@@ -35,7 +35,7 @@ function ChatBox() {
       setTimeout(()=> {element.scrollTop = element.scrollHeight}, 100)
     }
   }
-  const handleSentMess = (e) => {
+  const handleSentMess = () => {
       setArtists([...artists, { subtitle2: subtitle, subtitle1: '', time2: 2 }]);
       setSubtitle('');
       const element = document.getElementById("sent");

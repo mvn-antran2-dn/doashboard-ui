@@ -13,12 +13,16 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Logo from "./assets/images/logo";
 import Chip from '@mui/material/Chip';
-import { Grid } from '@mui/material';
+import Button from '@mui/material/Button';
+import { Grid, ThemeProvider } from '@mui/material';
 import Sidebar from './component/modules/sidebar';
 import Main from './pages';
 import FooterCP from "./component/layout/footer";
 import HeaderCP from "./component/layout/header";
 import { Route, Routes } from "react-router-dom";
+import { useState } from 'react';
+import { darkTheme, defaultTheme } from './component/layout/theme';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
 
 const drawerWidth = 259;
 function App(props) {
@@ -28,7 +32,7 @@ function App(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const [isChange, setIsChange] = useState(false);
   const drawer = (
     <div>
       <Toolbar className="header-toolbar">
@@ -37,7 +41,7 @@ function App(props) {
             <Box className='header-logo' sx={{ display: "flex", alignItems: "center" }}>
               <Logo />
               <Typography marginLeft={1.5}>Mira</Typography>
-              <Chip label="PRO" color="success" size="small" className="header-chip-pro"/>
+              <Chip label="PRO" color="success" size="small" className="header-chip-pro" />
             </Box>
           </Paper>
         </Grid></ Toolbar>
@@ -50,76 +54,89 @@ function App(props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
   return (
-    <div className="App">
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
-          sx={{
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-            ml: { sm: `${drawerWidth}px` },
-          }}
-          className="appbar"
-          elevation={0}
-        >
-          <Toolbar className="header-toolbar">
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: 'none' } }}
+    <ThemeProvider theme={ isChange ? darkTheme : defaultTheme}>
+      <div className="App">
+        <Box sx={{ display: 'flex' }}>
+          <CssBaseline />
+          <AppBar
+            position="fixed"
+            sx={{
+              width: { sm: `calc(100% - ${drawerWidth}px)` },
+              ml: { sm: `${drawerWidth}px` },
+            }}
+            className="appbar"
+            elevation={0}
+            color = "primary"
+          >
+            <Toolbar className="header-toolbar">
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: 'none' } }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <HeaderCP />
+            </Toolbar>
+          </AppBar>
+          <Box
+            component="nav"
+            sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+            aria-label="mailbox folders"
+            className="menu-nav"
+          >
+            <Drawer
+              container={container}
+              variant="temporary"
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              ModalProps={{
+                keepMounted: true,
+              }}
+              sx={{
+                display: { xs: 'block', sm: 'none' },
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+              }}
+              className="menu-nav-drawer"
             >
-              <MenuIcon />
-            </IconButton>
-            <HeaderCP />
-          </Toolbar>
-        </AppBar>
-        <Box
-          component="nav"
-          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-          aria-label="mailbox folders"
-          className="menu-nav"
-        >
-          <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true,
-            }}
-            sx={{
-              display: { xs: 'block', sm: 'none' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-            }}
-            className="menu-nav-drawer"
+              {drawer}
+            </Drawer>
+            <Drawer
+              variant="permanent"
+              sx={{
+                display: { xs: 'none', sm: 'block' },
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+              }}
+              open
+            >
+              {drawer}
+            </Drawer>
+          </Box>
+          <Box
+            component="main"
+            sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+            className="page-main"
           >
-            {drawer}
-          </Drawer>
-          <Drawer
-            variant="permanent"
-            sx={{
-              display: { xs: 'none', sm: 'block' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-            }}
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Box>
-        <Box
-          component="main"
-          sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-          className="page-main"
-        >
-           <Routes>
+            <Grid className='btn-bg-theme'>
+              <Button
+                onClick={() => setIsChange(!isChange)}
+                disableTouchRipple={true}
+                size='large'
+                className='btn-theme'
+              >
+                <ColorLensIcon fontSize='medium' />
+              </Button>
+            </Grid>
+            <Routes>
               <Route path="*" element={<Main />}></Route>
             </Routes>
+          </Box>
         </Box>
-      </Box>
-      <FooterCP />
-    </div>
+        <FooterCP />
+      </div>
+    </ThemeProvider >
   );
 }
 App.propTypes = {

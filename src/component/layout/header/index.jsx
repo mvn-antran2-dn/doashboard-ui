@@ -56,7 +56,7 @@ function HeaderCP() {
   return (
     <>
       <Grid item xs={9.85} className="page-header-menu">
-        <Paper square elevation={0} sx={{ display: "flex", alignItems: "center" }}>
+        <Paper square elevation={0} sx={{ display: "flex", alignItems: "center" }} color = "primary">
           <Box className='header-menu' paddingX={1.5} paddingY={2.4} sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <Box className='header-menu-search'>
               <SearchIcon></SearchIcon>
@@ -106,7 +106,6 @@ function HeaderCP() {
                 <MenuItem className="menu-item-today item-mess" onClick={handleClose3}>
                   <Box className="menu-item-mess-content">
                     <div>
-
                       <img src="https://mira.bootlab.io/static/img/avatars/avatar-2.jpg" alt="avatar2" />
                     </div>
                     <Box className="item-mess-title">

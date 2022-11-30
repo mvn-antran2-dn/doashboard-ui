@@ -45,7 +45,7 @@ function CardItem() {
               <Typography className="card-prime" variant="h6" component="h3"> {card.prime}</Typography>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Chip className="card-chip2" label={card.subtitle1} color="success" />
-                <Typography className="card-subtitle" variant='body3' component="h6" marginLeft={1.5}> {card.subtitle2}</Typography>
+                <Typography color = "secondary" className="card-subtitle" variant='body3' component="h6" marginLeft={1.5}> {card.subtitle2}</Typography>
               </Box>
             </Box>
           </Paper>

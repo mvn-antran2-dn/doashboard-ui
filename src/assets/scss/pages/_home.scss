@@ -1,10 +1,35 @@
+.btn-bg-theme {
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  @include pxRem(min-height, 36);
+  @include pxRem(width, 56);
+  @include pxRem(height, 56);
+  @include pxRem(right, 32);
+  @include pxRem(bottom, 32);
+  background-color: rgb(55, 111, 208);
+  position: fixed;
+  z-index: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .btn-theme {
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .page-main {
-  background: rgb(247, 249, 252);
   @include pxRem(padding, 48 48 48 47 !important);
 
   &-content {
     @include pxRem(padding, 48 0);
   }
+
 
   &-sidebar {
     background-color: rgb(35, 48, 68);
@@ -30,21 +55,24 @@
       opacity: 0.5;
     }
 
-    .sidebar-list-name{
+    .sidebar-list-name {
       @include pxRem(padding, 9 27 12 31);
+
       span {
         @include pxRem(font-size, 13.5);
         color: rgb(238, 238, 238);
       }
-    } 
-    .sidebar-list-collapse{
+    }
+
+    .sidebar-list-collapse {
       padding: 0;
+
       span {
         @include pxRem(font-size, 13.5);
         color: rgb(238, 238, 238);
         opacity: 0.6;
       }
-    } 
+    }
 
     .sidebar-item-name {
       @include pxRem(padding-left, 40);
@@ -53,7 +81,6 @@
   }
 
   &-menu-header {
-    background: rgb(247, 249, 252);
     display: flex;
     justify-content: space-between;
     @include pxRem(padding-top, 14);
@@ -136,7 +163,6 @@
       .card-subtitle {
         font-size: 0.8125rem;
         line-height: 1.57;
-        color: rgba(0, 0, 0, 0.6);
         font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-weight: map-get($map: $font-weight, $key: font-regular);
         @include pxRem(margin-left, 11);
@@ -250,8 +276,8 @@
 
       th,
       td {
-        border: unset;
-        border-bottom: 1px solid rgba(224, 224, 224, 1);
+        // border: unset;
+        // border-bottom: 1px solid rgba(224, 224, 224, 1);
         @include pxRem(padding, 9 16);
       }
 
@@ -292,8 +318,8 @@
 
       th,
       td {
-        border: unset;
-        border-bottom: 1px solid rgba(224, 224, 224, 1);
+        // border: unset;
+        // border-bottom: 1px solid rgba(224, 224, 224, 1);
         @include pxRem(padding, 15.5 16);
         @include pxRem(width, 152.42);
         @include pxRem(max-width, 152.42);
@@ -307,7 +333,7 @@
         font-weight: 400;
         font-size: 0.8125rem;
         line-height: 1.43;
-        color: rgba(0, 0, 0, 0.87);
+        // color: rgba(0, 0, 0, 0.87);
         @include pxRem(padding, 15.5 16);
       }
 
@@ -346,7 +372,6 @@
         font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-weight: 400;
         line-height: 1.5;
-        color: rgba(0, 0, 0, 0.6);
       }
 
       li:not(:last-child) {
@@ -549,6 +574,226 @@
         border-radius: 3px;
         padding: 8px;
         margin-bottom: 4px;
+      }
+    }
+  }
+
+  /// end page chat
+  .profile-card1 {
+    .MuiCardContent-root {
+      @include pxRem(padding-bottom, 22 !important);
+    }
+
+    &-header {
+      margin: 0px 0px 0.35em;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.25;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      @include pxRem(margin-top, 16);
+
+      img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-subtitle {
+      margin: 0px 0px 0.35em;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      font-size: 0.8125rem;
+      line-height: 1.43;
+
+      &.one {
+        font-weight: 500;
+        @include pxRem(margin, 5 0 0);
+      }
+    }
+
+    &-btn {
+      font-size: 0.754464rem;
+      @include pxRem(margin, 0 8 2 0);
+      text-transform: inherit;
+      line-height: 1.85;
+      @include pxRem(padding, 4 10 2);
+    }
+  }
+
+  .profile-card:not(:first-child) {
+    @include pxRem(margin-top, 25);
+  }
+
+  .profile-card2-content {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    @include pxRem(margin, 16.5 7 0 -2);
+
+    &-chip {
+      @include pxRem(border-radius, 6);
+      @include pxRem(margin, 0 0 4 4);
+      @include pxRem(height, 24);
+      @include pxRem(letter-spacing, -0.1);
+
+      span {
+        @include pxRem(padding, 0 8);
+      }
+
+      &:first-child {
+        background-color: rgb(71, 130, 218);
+        color: #fff;
+      }
+    }
+  }
+
+  .profile-card3-content {
+    @include pxRem(margin-top, 16);
+
+    &-subtitle {
+      @include pxRem(margin-bottom, 4);
+
+      svg {
+        @include pxRem(width, 20);
+        @include pxRem(margin, -1 0 0 -2);
+      }
+    }
+
+    span {
+      font-size: 13px;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      line-height: 1.5;
+      @include pxRem(margin-left, 4.4);
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 13px;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      line-height: 1.5;
+      @include pxRem(margin-left, 4.4);
+    }
+
+    &.card4 {
+      svg {
+        @include pxRem(width, 18);
+
+      }
+    }
+  }
+
+  .title-chart-line.bar-chart-profile-title {
+    @include pxRem(padding, 16 18 0);
+  }
+
+  .bar-chart-profile {
+    @include pxRem(height, 312);
+    @include pxRem(padding, 0 18 8);
+  }
+
+  .card-profile-item {
+    @include pxRem(margin-top, 25);
+  }
+
+  .card-profile-progress {
+    @include pxRem(margin-top, 16);
+
+    .css-5ir5xx-MuiLinearProgress-bar1 {
+      animation: animation-ozg7p2 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) forwards;
+      transform: translateX(-125%);
+    }
+
+    .css-1r8wrcl-MuiLinearProgress-bar2 {
+      animation: unset;
+    }
+    .css-1nrbbjj-MuiLinearProgress-bar2{
+      animation: unset;
+    }
+    .css-1bzgrj-MuiLinearProgress-bar1{
+      animation: animation-ozg7p2 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) forwards;
+      transform: translateX(-125%);
+    }
+  }
+
+  .card-profile-item:nth-child(2) {
+    .card-profile-progress {
+      .css-5ir5xx-MuiLinearProgress-bar1 {
+        transform: translateX(-175%);
+      }
+      .css-1bzgrj-MuiLinearProgress-bar1{
+        transform: translateX(-175%);
+      }
+    }
+  }
+
+  .card-profile-item:last-child {
+    .card-profile-progress {
+      .css-5ir5xx-MuiLinearProgress-bar1 {
+        transform: translateX(-150%);
+      }
+      .css-1bzgrj-MuiLinearProgress-bar1{
+        transform: translateX(-150%);
+      }
+    }
+  }
+
+  .card-profile {
+    @include pxRem(padding, 16 16 24);
+    position: relative;
+
+    &-prime {
+      margin: 0.2em 0 0.35em;
+      font-size: 1.85rem;
+      font-weight: 400;
+      line-height: 1.25;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    &-title {
+      @include pxRem(margin, 12 0 0);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: 400;
+      font-size: 0.8125rem;
+      line-height: 1.43;
+    }
+
+    svg {
+      position: absolute;
+      top: 27%;
+      right: 6.9%;
+      @include pxRem(width, 32);
+      @include pxRem(height, 32);
+      color: rgb(71, 130, 218);
+    }
+  }
+
+  .table-profile {
+    .title-chart-line {
+      @include pxRem(padding, 16 16 0);
+    }
+
+    .table-bar-chart {
+      box-shadow: none;
+    }
+
+    .table-chip-state {
+      border-radius: 6px;
+      height: 20px;
+      padding: 4px 0px;
+      font-size: 90%;
+      opacity: 0.8;
+      span{
+        padding-left: 8px;
+        padding-right: 8px;
       }
     }
   }

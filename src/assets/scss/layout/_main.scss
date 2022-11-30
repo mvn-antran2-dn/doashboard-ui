@@ -1,0 +1,100 @@
+html[data-theme = "default"] {
+  .page-main-sidebar {
+    background-color:rgb(35, 48, 68);
+    color: map-get($map: $colors, $key: color-background);
+    @include pxRem(padding-top, 10);
+    height: 102.8%;
+
+    .sidebar-list-title {
+      background-color:rgb(35, 48, 68);
+      color: map-get($map: $colors, $key: bs-gray-500);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: map-get($map: $font-weight, $key: font-regular);
+      line-height: 1.57;
+      font-size: 0.696429rem;
+      @include pxRem(padding, 15 28 4);
+      color: rgb(238, 238, 238);
+      opacity: 0.4;
+      @include pxRem(letter-spacing, -0.1);
+    }
+
+    svg {
+      color: rgb(238, 238, 238);
+      opacity: 0.5;
+    }
+
+    .sidebar-list-name {
+      @include pxRem(padding, 9 27 12 31);
+
+      span {
+        @include pxRem(font-size, 13.5);
+        color: rgb(238, 238, 238);
+      }
+    }
+
+    .sidebar-list-collapse {
+      padding: 0;
+
+      span {
+        @include pxRem(font-size, 13.5);
+        color: rgb(238, 238, 238);
+        opacity: 0.6;
+      }
+    }
+
+    .sidebar-item-name {
+      @include pxRem(padding-left, 40);
+      margin: 0 0;
+    }
+  }
+}
+html[data-theme = "blue"] {
+  .page-main-sidebar {
+    background-color: rgb(55, 111, 208);
+    color: map-get($map: $colors, $key: color-background);
+    @include pxRem(padding-top, 10);
+    height: 102.8%;
+
+    .sidebar-list-title {
+      background-color: rgb(55, 111, 208);
+      color: map-get($map: $colors, $key: bs-gray-500);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-weight: map-get($map: $font-weight, $key: font-regular);
+      line-height: 1.57;
+      font-size: 0.696429rem;
+      @include pxRem(padding, 15 28 4);
+      color: rgb(238, 238, 238);
+      opacity: 0.4;
+      @include pxRem(letter-spacing, -0.1);
+    }
+
+    svg {
+      color: rgb(238, 238, 238);
+      opacity: 0.5;
+    }
+
+    .sidebar-list-name {
+      @include pxRem(padding, 9 27 12 31);
+
+      span {
+        @include pxRem(font-size, 13.5);
+        color: rgb(238, 238, 238);
+      }
+    }
+
+    .sidebar-list-collapse {
+      padding: 0;
+
+      span {
+        @include pxRem(font-size, 13.5);
+        color: rgb(238, 238, 238);
+        opacity: 0.6;
+      }
+    }
+
+    .sidebar-item-name {
+      @include pxRem(padding-left, 40);
+      margin: 0 0;
+    }
+  }
+}

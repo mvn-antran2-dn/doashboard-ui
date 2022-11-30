@@ -60,6 +60,7 @@
         box-shadow: none;
         border: unset;
         @include pxRem(font-size, 13);
+        @include pxRem(height, 17.69);
       }
 
       input+fieldset {
@@ -68,10 +69,7 @@
 
       .search-input {
         border: unset;
-
-        &:hover {
-          background-color: rgb(242, 242, 242);
-        }
+        
       }
 
       svg {
@@ -80,10 +78,6 @@
 
       .search-input>div {
         @include pxRem(height, 22);
-      }
-
-      &:hover {
-        background-color: rgb(242, 242, 242);
       }
     }
 

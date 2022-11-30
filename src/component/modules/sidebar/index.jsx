@@ -44,7 +44,7 @@ function Sidebar() {
         }
       >
         <ListItemButton className='sidebar-list-name' onClick={handleClick1}>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <TuneIcon />
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
@@ -74,7 +74,7 @@ function Sidebar() {
           </List>
         </Collapse>
         <ListItemButton className='sidebar-list-name' onClick={handleClick2}>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <WebIcon />
           </ListItemIcon>
           <ListItemText primary="Pages" />
@@ -82,9 +82,11 @@ function Sidebar() {
         </ListItemButton>
         <Collapse className='sidebar-list-collapse' in={open2} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4, padding: "2px 16px 14px 32px " }}>
-              <ListItemText className='sidebar-item-name' primary="Profile" />
-            </ListItemButton>
+            <NavLink to="/profile">
+              <ListItemButton sx={{ pl: 4, padding: "2px 16px 14px 32px " }}>
+                <ListItemText className='sidebar-item-name' primary="Profile" />
+              </ListItemButton>
+            </NavLink>
           </List>
         </Collapse>
         <Collapse className='sidebar-list-collapse' in={open2} timeout="auto" unmountOnExit>
@@ -118,37 +120,37 @@ function Sidebar() {
           </List>
         </Collapse>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <LuggageIcon />
           </ListItemIcon>
           <ListItemText primary="Projects" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <ShoppingCartOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Orders" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <PaymentOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Invoies" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <AssignmentTurnedInOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Task" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <CalendarTodayOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Calender" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <GroupOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Auth" />
@@ -165,37 +167,37 @@ function Sidebar() {
         }
       >
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <WidgetsOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Components" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <PieChartOutlineOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Chart" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <AssignmentTurnedInOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Forms" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <FormatListBulletedOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Tables" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <FavoriteBorderOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Icons" />
         </ListItemButton>
         <ListItemButton className='sidebar-list-name'>
-          <ListItemIcon sx={{minWidth: "38px"}}>
+          <ListItemIcon sx={{ minWidth: "38px" }}>
             <MapOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="Maps" />
