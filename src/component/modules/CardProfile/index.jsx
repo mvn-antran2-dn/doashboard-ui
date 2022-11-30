@@ -12,7 +12,7 @@ const card = [
     x2: "12",
     y2: "23",
     prime: "$ 2.405",
-    transform: "-25%",
+    transform: 25,
   },
   {
     title: "Orders Today",
@@ -23,7 +23,7 @@ const card = [
     x2: "21",
     y2: "6",
     prime: "30",
-    transform: "-70%",
+    transform: 70,
   },
   {
     title: "Total Revenue",
@@ -34,7 +34,7 @@ const card = [
     x2: "12",
     y2: "23",
     prime: "$ 1.224",
-    transform: "-50%",
+    transform: 50,
   },
 ]
 
@@ -52,7 +52,7 @@ function CardProfile() {
                 <path d={card.path1}></path>
                 {card.path2 === "" ? "" : (<path d="M16 10a4 4 0 0 1-8 0"></path>)}
               </svg>
-              <LinearProgress className = "card-profile-progress" />
+              <LinearProgress variant='determinate' value= {card.transform} className = "card-profile-progress" />
             </Box>
           </Paper>
         </Grid >

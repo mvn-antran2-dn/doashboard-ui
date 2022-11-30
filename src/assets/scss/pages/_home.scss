@@ -704,47 +704,47 @@
     @include pxRem(margin-top, 25);
   }
 
-  .card-profile-progress {
-    @include pxRem(margin-top, 16);
+  // .card-profile-progress {
+  //   @include pxRem(margin-top, 16);
 
-    .css-5ir5xx-MuiLinearProgress-bar1 {
-      animation: animation-ozg7p2 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) forwards;
-      transform: translateX(-125%);
-    }
+  //   .css-5ir5xx-MuiLinearProgress-bar1 {
+  //     animation: animation-ozg7p2 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) forwards;
+  //     transform: translateX(-125%);
+  //   }
 
-    .css-1r8wrcl-MuiLinearProgress-bar2 {
-      animation: unset;
-    }
-    .css-1nrbbjj-MuiLinearProgress-bar2{
-      animation: unset;
-    }
-    .css-1bzgrj-MuiLinearProgress-bar1{
-      animation: animation-ozg7p2 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) forwards;
-      transform: translateX(-125%);
-    }
-  }
+  //   .css-1r8wrcl-MuiLinearProgress-bar2 {
+  //     animation: unset;
+  //   }
+  //   .css-1nrbbjj-MuiLinearProgress-bar2{
+  //     animation: unset;
+  //   }
+  //   .css-1bzgrj-MuiLinearProgress-bar1{
+  //     animation: animation-ozg7p2 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) forwards;
+  //     transform: translateX(-125%);
+  //   }
+  // }
 
-  .card-profile-item:nth-child(2) {
-    .card-profile-progress {
-      .css-5ir5xx-MuiLinearProgress-bar1 {
-        transform: translateX(-175%);
-      }
-      .css-1bzgrj-MuiLinearProgress-bar1{
-        transform: translateX(-175%);
-      }
-    }
-  }
+  // .card-profile-item:nth-child(2) {
+  //   .card-profile-progress {
+  //     .css-5ir5xx-MuiLinearProgress-bar1 {
+  //       transform: translateX(-175%);
+  //     }
+  //     .css-1bzgrj-MuiLinearProgress-bar1{
+  //       transform: translateX(-175%);
+  //     }
+  //   }
+  // }
 
-  .card-profile-item:last-child {
-    .card-profile-progress {
-      .css-5ir5xx-MuiLinearProgress-bar1 {
-        transform: translateX(-150%);
-      }
-      .css-1bzgrj-MuiLinearProgress-bar1{
-        transform: translateX(-150%);
-      }
-    }
-  }
+  // .card-profile-item:last-child {
+  //   .card-profile-progress {
+  //     .css-5ir5xx-MuiLinearProgress-bar1 {
+  //       transform: translateX(-150%);
+  //     }
+  //     .css-1bzgrj-MuiLinearProgress-bar1{
+  //       transform: translateX(-150%);
+  //     }
+  //   }
+  // }
 
   .card-profile {
     @include pxRem(padding, 16 16 24);
